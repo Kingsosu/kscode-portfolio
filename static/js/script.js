@@ -8,7 +8,7 @@ const typed = new Typed('.typing', {
     //showCursor: false // Hides the cursor
 });
 
-const nav = document.querySelector('.nav');
+const nav = document.querySelector('.nav-k');
 const navList = nav.querySelectorAll('li');
 const allSection = document.querySelectorAll('.section');
 const totalSection = allSection.length;

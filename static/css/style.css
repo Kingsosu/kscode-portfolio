@@ -35,7 +35,7 @@ body.dark{
     margin: 0;
     padding: 0;
     outline: none;
-    text-decoration: none;
+    text-decoration: none !important;
     box-sizing: border-box;
     scrollbar-width: thin;
 }
@@ -183,7 +183,7 @@ ul{
     border: none;
     display: inline-block;
     white-space: nowrap;
-    background-color: var(--skin-color);
+    background-color: var(--skin-color) !important;
     transition: var(--transition);
 }
 .btn:hover{
@@ -238,25 +238,29 @@ ul{
     display: none;
 }
 
-.aside .nav{
+.aside .nav-k{
     margin-top: 50px;
+    width: 100%;
 }
-.aside .nav li{
+.aside .nav-k li{
     margin-bottom: 25px;
     display: block;
 }
-.aside .nav li a{
+
+.aside .nav-k li a {
     font-size: 1.2rem;
     font-weight: 600;
     display: block;
     border-bottom: 1px solid var(--bg-black-50);
     color: var(--text-black-900);
+    text-decoration: none;
     padding: 5px 15px;
 }
-.aside .nav li a.active{
+
+.aside .nav-k li a.active{
     color: var(--skin-color);
 }
-.aside .nav li a i{
+.aside .nav-k li a i{
     margin-right: 15px;
 }
 
