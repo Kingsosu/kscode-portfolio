@@ -442,7 +442,7 @@
                                 <a href="{{job.link}}" target="_blank">
                                     <div class="portfolio-head">
                                         <h4>{{job.name}}</h4>
-                                        <p>{{job.desc}}</p>
+                                        <p>{{ job.description|truncatechars:100 }}</p>
                                         <a href="{{job.link}}" target="_blank"><i class="fa-solid fa-link"></i></a>
                                     </div>
                                 </a>
@@ -463,7 +463,6 @@
                             <h2>My Receent UI/UX Design</h2>
                         </div>
                     </div>
-
                     <div class="row">
                         <!-- === portfolio item start === -->
                         {% for job in uiprojects %}
@@ -474,9 +473,9 @@
                                 </div>
                                 <a href="{{job.link}}" target="_blank">
                                     <div class="portfolio-head">
-                                        <h4>{{job.name}}</h4>
-                                        <p>{{job.desc}}</p>
-                                        <a href="{{job.link}}" target="_blank"><i class="fa-solid fa-link"></i></a>
+                                        <h4>{{ job.name }}</h4>
+                                        <p>{{ job.description|truncatechars:50 }}</p>
+                                        <a href="{{ job.link }}" target="_blank"><i class="fa-solid fa-link"></i></a>
                                     </div>
                                 </a>
                             </div>
