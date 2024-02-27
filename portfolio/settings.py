@@ -12,10 +12,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
-import environ, ast
-
-env = environ.Env()
-environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -43,11 +39,20 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # 'jazzmin',
-
     'portfolioapp',
     'storages',
 ]
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = 'suleimanmohammed751@gmail.com'
+EMAIL_HOST_PASSWORD = 'ieqyzfseeizafxlv'
+EMAIL_PORT = 465  # Port for SSL
+DEFAULT_FROM_EMAIL = 'suleimanmohammed751@gmail.com'  # Sender email address
+SERVER_EMAIL = 'suleimanmohammed751@gmail.com'  # Email address for error notifications
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -80,12 +85,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'portfolio.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-import dj_database_url
-
 
 DATABASES = {
     'default': {
@@ -93,7 +94,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -137,11 +137,8 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
-
 # Whitenoise configuration
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -157,9 +154,7 @@ AWS_SECRET_ACCESS_KEY = '3Wk9F/YoaCuAhu3EVh9gVXC4qzP3//j2/cppAjGb'
 # Basic Storage configuration for Amazon S3 (Irrespective of Django versions)
 
 AWS_STORAGE_BUCKET_NAME = 'kings-bkt-99' # - Enter your S3 bucket name HERE
-
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-
 AWS_S3_FILE_OVERWRITE = False
 
 STORAGES = {
